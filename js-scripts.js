@@ -78,8 +78,8 @@ function validateAddSubject() {
         validation+= "description can't be empty.\n";
     }
     if(validation==""){
-        //alert("Subject added successfully");
-        window.location.replace("http://www.studentskasluzba.local/subject-list.html");
+        alert("Subject added successfully");
+        // window.location.replace("http://www.studentskasluzba.local/subject-list.html");
     }else{
         alert(validation);
     }
@@ -160,8 +160,8 @@ function validateAddStudent() {
         validation+= "course can't be empty\n";
     }
     if(validation==""){
-        //alert("Student added successfully");
-        window.location.href = "student-list.html";
+        alert("Student added successfully");
+        // window.location.href = "student-list.html";
     }else{
         alert(validation);
     }
@@ -228,7 +228,6 @@ function validateAddProfessor(){
     if(validation==""){
         //alert("Student added successfully");
         window.location.href = "https://www.example.com";
-    }, 3000);
     }else{
         alert(validation);
     }
