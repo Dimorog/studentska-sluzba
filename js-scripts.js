@@ -203,7 +203,6 @@ function validateEditStudent() {
 }
 
 function validateAddProfessor(){
-    alert("aaa");
     var validation="";
     var firstname = document.forms["add_professor"]["firstname"].value;
     if(firstname==""){
@@ -213,9 +212,7 @@ function validateAddProfessor(){
     if(lastname==""){
         validation+= "last name can't be empty\n";
     }
-    alert("bb");
     var age = document.forms["add_professor"]["age"].value;
-    alert("cc");
     var agePattern = new RegExp("^(2[89]|[3-5][0-9]|6[0-5])$");
     if(age!==""){
         if(agePattern.test(age)==false){
@@ -237,7 +234,6 @@ function validateAddProfessor(){
 }
 
 function validateEditProfessor(){
-    alert("aaa");
     var validation="";
     var firstname = document.forms["edit_professor"]["firstname"].value;
     if(firstname==""){
@@ -247,9 +243,7 @@ function validateEditProfessor(){
     if(lastname==""){
         validation+= "last name can't be empty\n";
     }
-    alert("bb");
     var age = document.forms["edit_professor"]["age"].value;
-    alert("cc");
     var agePattern = new RegExp("^(2[89]|[3-5][0-9]|6[0-5])$");
     if(age!==""){
         if(agePattern.test(age)==false){
