@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="" name="add_subject">
+<script src="js-scripts.js"></script>
+    <form action="" name="add_subject" onsubmit="validateAddSubject()">
         Name:<br>
         <input type="text" name="name"><br>
 
@@ -20,10 +21,10 @@
         </select> <br>
 
         ECDL:<br>
-        <input type="text" name="ecdl"><br>
+        <input type="number" name="ecdl"><br>
 
         Description:<br>
-        <textarea rows="4" cols="50" name="decription"></textarea>
+        <textarea rows="4" cols="50" name="description"></textarea>
         <br><br>
 
         <input type="submit" value="Submit">

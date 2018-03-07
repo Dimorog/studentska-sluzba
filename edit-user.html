@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="" name="edit_user">
+<script src="js-scripts.js"></script>
+    <form action="" name="edit_user" onsubmit="validateEditUser()">
         Username:<br>
         <input type="text" name="username"><br>
 
@@ -16,8 +17,8 @@
         <input type="password" name="password" ><br>
 
         Is this user an Admin?<br>
-        <input type="radio" name="admin" value="1" checked> Yes<br>
-        <input type="radio" name="admin" value="0"> No<br>
+        <input type="checkbox" name="admin" value="1"> Yes<br>
+
 
         <input type="submit" value="Submit">
     </form>
