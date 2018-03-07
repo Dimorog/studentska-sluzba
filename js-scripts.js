@@ -230,7 +230,8 @@ function validateAddProfessor(){
     }
     if(validation==""){
         //alert("Student added successfully");
-        window.location.href = "student-list.html";
+        window.location.href = "https://www.example.com";
+    }, 3000);
     }else{
         alert(validation);
     }
