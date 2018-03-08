@@ -32,6 +32,7 @@
                 echo "<td>" . $row['last_name'] . "</td>";
                 echo "<td>" . $row['age'] . "</td>";
                 echo "<td>" . $row['subject_id'] . "</td>";
+                echo "<td><a href='edit-professor.php?id=".$row['id']."'>Edit</a></td>";
                 echo "</tr>";
             }
         mysqli_close($conn);

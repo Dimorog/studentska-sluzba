@@ -31,6 +31,7 @@
             echo "<td>" . $row['gender'] . "</td>";
             echo "<td>" . $row['birthday'] . "</td>";
             echo "<td>" . $row['course'] . "</td>";
+            echo "<td><a href='edit-student.php?id=".$row['id']."'>Edit</a></td>";
             echo "</tr>";
         }
         mysqli_close($conn);

@@ -28,6 +28,7 @@
         echo "<td>" . $row['name'] . "</td>";
         echo "<td>" . $row['semester'] . "</td>";
         echo "<td>" . $row['ecdl_credits'] . "</td>";
+        echo "<td><a href='edit-subject.php?id=".$row['id']."'>Edit</a></td>";
         echo "</tr>";
     }
     mysqli_close($conn);

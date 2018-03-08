@@ -19,9 +19,11 @@ function validateLogin(){
         validation+= "password can't be empty\n";
     }
     if(validation==""){
-        alert("Login successful");
+        //alert("Login successful");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 
 }
@@ -59,9 +61,12 @@ function validateAddUser() {
 
     if(validation==""){
         alert("User added successfully");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
+
 }
 
 function validateEditUser() {
@@ -94,9 +99,11 @@ function validateEditUser() {
         validation+= "password can't be empty\n";
     }
     if(validation==""){
-        alert("User edited successfully");
+        //alert("User edited successfully");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 }
 
@@ -121,9 +128,10 @@ function validateAddSubject() {
     }
     if(validation==""){
         alert("Subject added successfully");
-        // window.location.replace("http://www.studentskasluzba.local/subject-list.html");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 }
 
@@ -147,9 +155,10 @@ function validateEditSubject() {
     }
     if(validation==""){
         //alert("Subject added successfully");
-        window.location.replace("http://www.studentskasluzba.local/subject-list.php");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 }
 //
@@ -240,9 +249,10 @@ function validateEditStudent() {
     }
     if(validation==""){
         //alert("Student added successfully");
-        window.location.replace("http://www.studentskasluzba.local/subject-list.php");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 }
 
@@ -303,9 +313,10 @@ function validateEditProfessor(){
     }
     if(validation==""){
         //alert("Student added successfully");
-        window.location.href = "student-list.php";
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 
 }

@@ -7,7 +7,19 @@
 </head>
 <body>
 <script src="js-scripts.js"></script>
-    <form action="subject-list.php" name="add_subject" onsubmit="validateAddSubject()">
+    <form method="post" name="add_subject" onsubmit="return validateAddSubject()">
+        <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $name = $_POST['name'];
+            $semester = $_POST['semester'];
+            $ecdl = $_POST['ecdl'];
+            $description = $_POST['description'];
+            $sql = "INSERT INTO subject(name, semester, ecdl_credits, description) VALUES ('$name','$semester', $ecdl, '$description')";
+            if ($conn->query($sql) == true) {
+                echo '<script type="text/javascript"> window.location = "subject-list.php"</script>';
+            }
+        }
+        ?>
         Name:<br>
         <input type="text" name="name"><br>
 

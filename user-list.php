@@ -32,6 +32,7 @@
         echo "<td>" . $row['username'] . "</td>";
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['role'] . "</td>";
+        echo "<td><a href='edit-user.php?id=".$row['id']."'>Edit</a></td>";
         echo "</tr>";
     }
     mysqli_close($conn);

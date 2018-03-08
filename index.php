@@ -6,6 +6,15 @@
     <title>Title</title>
 </head>
 <body>
+        <?php
+        if(isset($_SESSION["user_id"])){
+            echo $_SESSION['username'];
+            echo '<a href="logout.php">LOGOUT</a>';
+        }else{
+            echo '<a href="login.php">LOGIN</a>';
+        }
+        ?>
+
         <h1>Student service</h1>
         <a href="add-student.php"><h3>Add Student</h3></a>
         <a href="edit-student.php"><h3>Edit Student</h3></a>
