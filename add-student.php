@@ -7,7 +7,21 @@
 </head>
 <body>
 <script src="js-scripts.js"></script>
-    <form action="student-list.php" name="add_student" onsubmit="validateAddStudent();">
+    <form method="post" name="add_student" onsubmit="return validateAddStudent();">
+        <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $gender = $_POST['gender'];
+            $index = $_POST['index'];
+            $birt_date = $_POST['birth_date'];
+            $course = $_POST['course'];
+            $sql = "INSERT INTO student(index_number, first_name, last_name, gender, birthday, course) VALUES ('$index', '$firstname', '$lastname', '$gender', '$birt_date', '$course')";
+            if ($conn->query($sql) == true) {
+                echo '<script type="text/javascript"> window.location = "student-list.php"</script>';
+            }
+        }
+        ?>
         First name:<br>
         <input type="text" name="firstname" id="firstname"><br>
 

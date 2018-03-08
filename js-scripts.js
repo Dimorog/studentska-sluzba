@@ -170,7 +170,6 @@ function validateStudentSubject() {
 }
 
 function validateAddStudent() {
-
     var validation="";
     var firstname = document.forms["add_student"]["firstname"].value;
     if(firstname==""){
@@ -204,10 +203,10 @@ function validateAddStudent() {
     }
     if(validation==""){
         alert("Student added successfully");
-         window.location.href = "student-list.php";
+        return true;
     }else{
         alert(validation);
-
+        return false;
     }
 
 }
@@ -271,10 +270,11 @@ function validateAddProfessor(){
         validation+= "subject can't be empty\n";
     }
     if(validation==""){
-        //alert("Student added successfully");
-        window.location.href = "https://www.example.com";
+        alert("Professor added successfully");
+        return true;
     }else{
         alert(validation);
+        return false;
     }
 }
 
