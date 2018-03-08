@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php require 'db_connection.php';?>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -16,4 +17,6 @@
     <input type="button" value="Submit" onclick="validateStudentSubject()">
 </form>
 </body>
+
+
 </html>

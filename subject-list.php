@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php require 'db_connection.php';?>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
@@ -36,4 +37,5 @@
 </table>
 
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php require 'db_connection.php';?>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -29,5 +30,6 @@
 
         <input type="submit" value="Submit">
     </form>
+
 </body>
 </html>
