@@ -147,7 +147,7 @@ function validateEditSubject() {
     }
     if(validation==""){
         //alert("Subject added successfully");
-        window.location.replace("http://www.studentskasluzba.local/subject-list.html");
+        window.location.replace("http://www.studentskasluzba.local/subject-list.php");
     }else{
         alert(validation);
     }
@@ -204,7 +204,7 @@ function validateAddStudent() {
     }
     if(validation==""){
         alert("Student added successfully");
-         window.location.href = "student-list.html";
+         window.location.href = "student-list.php";
     }else{
         alert(validation);
 
@@ -241,7 +241,7 @@ function validateEditStudent() {
     }
     if(validation==""){
         //alert("Student added successfully");
-        window.location.replace("http://www.studentskasluzba.local/subject-list.html");
+        window.location.replace("http://www.studentskasluzba.local/subject-list.php");
     }else{
         alert(validation);
     }
@@ -303,7 +303,7 @@ function validateEditProfessor(){
     }
     if(validation==""){
         //alert("Student added successfully");
-        window.location.href = "student-list.html";
+        window.location.href = "student-list.php";
     }else{
         alert(validation);
     }

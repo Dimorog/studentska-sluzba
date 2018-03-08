@@ -6,7 +6,7 @@
 </head>
 <body>
 <script src="js-scripts.js"></script>
-    <form action="student-list.html" name="edit_student"  id="edit_student" onsubmit="validateEditStudent()">
+    <form action="student-list.php" name="edit_student" id="edit_student" onsubmit="validateEditStudent()">
         First name:<br>
         <input type="text" name="firstname"  id="firstname"><br>
 

@@ -6,9 +6,9 @@
 </head>
 <body>
 <script src="js-scripts.js"></script>
-    <form action="user-list.html" name="add_user" onsubmit="validateAddUser()">
+    <form action="user-list.php" name="edit_user" onsubmit="validateEditUser()">
         Username:<br>
-        <input type="text" name="username"><br>
+        <input type="text" name="username" id="username" ><br>
 
         Email:<br>
         <input type="text" name="email" id="email" ><br>
