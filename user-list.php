@@ -23,23 +23,19 @@
         <th>Email</th>
         <th>Role</th>
     </tr>
-    <tr>
-        <td>MarkoStud</td>
-        <td>Markovic@gmail.com</td>
-        <td>Student</td>
-    </tr>
+    <?php
+    $result = mysqli_query($conn,"SELECT * FROM users");
 
-    <tr>
-        <td>JillProf</td>
-        <td>Smith@gmail.com</td>
-        <td>Professor</td>
-    </tr>
-
-    <tr>
-        <td>SrdjanStud</td>
-        <td>Medojevic@gmail.com</td>
-        <td>Student</td>
-    </tr>
+    while($row = mysqli_fetch_array($result))
+    {
+        echo "<tr>";
+        echo "<td>" . $row['username'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td>" . $row['role'] . "</td>";
+        echo "</tr>";
+    }
+    mysqli_close($conn);
+    ?>
 </table>
 </body>
 

@@ -19,21 +19,19 @@
         <th>Semester</th>
         <th>ECDL</th>
     </tr>
-    <tr>
-        <td>PHP</td>
-        <td>1</td>
-        <td>6</td>
-    </tr>
-    <tr>
-        <td>VHDL</td>
-        <td>2</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>C++</td>
-        <td>3</td>
-        <td>5</td>
-    </tr>
+    <?php
+    $result = mysqli_query($conn,"SELECT * FROM subject");
+
+    while($row = mysqli_fetch_array($result))
+    {
+        echo "<tr>";
+        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['semester'] . "</td>";
+        echo "<td>" . $row['ecdl_credits'] . "</td>";
+        echo "</tr>";
+    }
+    mysqli_close($conn);
+    ?>
 </table>
 
 </body>

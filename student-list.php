@@ -20,27 +20,21 @@
             <th>Birthday</th>
             <th>Course</th>
         </tr>
-        <tr>
-            <td>Marko</td>
-            <td>Markovic</td>
-            <td>Male</td>
-            <td>06.09.1997</td>
-            <td>Course 1</td>
-        </tr>
-        <tr>
-            <td>Ivan</td>
-            <td>Ivanovic</td>
-            <td>Male</td>
-            <td>07.08.1998</td>
-            <td>Course 2</td>
-        </tr>
-        <tr>
-            <td>Srdjan</td>
-            <td>Medojevic</td>
-            <td>Male</td>
-            <td>01.03.1996</td>
-            <td>Course 3</td>
-        </tr>
+        <?php
+        $result = mysqli_query($conn,"SELECT * FROM student");
+
+        while($row = mysqli_fetch_array($result))
+        {
+            echo "<tr>";
+            echo "<td>" . $row['first_name'] . "</td>";
+            echo "<td>" . $row['last_name'] . "</td>";
+            echo "<td>" . $row['gender'] . "</td>";
+            echo "<td>" . $row['birthday'] . "</td>";
+            echo "<td>" . $row['course'] . "</td>";
+            echo "</tr>";
+        }
+        mysqli_close($conn);
+        ?>
     </table>
 </body>
 
