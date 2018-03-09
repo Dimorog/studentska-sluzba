@@ -4,9 +4,11 @@
     <?php require 'db_connection.php';?>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="js-scripts.js"></script>
 </head>
 <body>
-<script src="js-scripts.js"></script>
+
+    <input type="button" value="mrs" onclick="proba()">
     <form method="post" name="add_professor" id="add_professor" onsubmit="return validateAddProfessor()">
         <?php
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
