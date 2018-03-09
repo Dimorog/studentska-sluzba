@@ -19,6 +19,8 @@
             <th>Gender</th>
             <th>Birthday</th>
             <th>Course</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <?php
         $result = mysqli_query($conn,"SELECT * FROM student");
@@ -32,6 +34,7 @@
             echo "<td>" . $row['birthday'] . "</td>";
             echo "<td>" . $row['course'] . "</td>";
             echo "<td><a href='edit-student.php?id=".$row['id']."'>Edit</a></td>";
+            echo "<td><a href=\"delete-student.php?id=".$row['id']."\">Delete</a></td>";
             echo "</tr>";
         }
         mysqli_close($conn);

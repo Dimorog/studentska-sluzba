@@ -20,6 +20,8 @@
             <th>Lastname</th>
             <th>Age</th>
             <th>Subject ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
 
         <?php
@@ -33,31 +35,12 @@
                 echo "<td>" . $row['age'] . "</td>";
                 echo "<td>" . $row['subject_id'] . "</td>";
                 echo "<td><a href='edit-professor.php?id=".$row['id']."'>Edit</a></td>";
+                echo "<td><a href='delete-professor.php?id=".$row['id']."'>Delete</a></td>";
                 echo "</tr>";
             }
         mysqli_close($conn);
         ?>
 
-
-
-       <!-- <tr>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>50</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>34</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>Mark</td>
-            <td>Marcus</td>
-            <td>41</td>
-            <td>3</td>
-        </tr>-->
     </table>
 </body>
 

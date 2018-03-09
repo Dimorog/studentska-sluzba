@@ -18,6 +18,8 @@
         <th>Name</th>
         <th>Semester</th>
         <th>ECDL</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <?php
     $result = mysqli_query($conn,"SELECT * FROM subject");
@@ -29,6 +31,7 @@
         echo "<td>" . $row['semester'] . "</td>";
         echo "<td>" . $row['ecdl_credits'] . "</td>";
         echo "<td><a href='edit-subject.php?id=".$row['id']."'>Edit</a></td>";
+        echo "<td><a href='delete-subject.php?id=".$row['id']."'>Delete</a></td>";
         echo "</tr>";
     }
     mysqli_close($conn);

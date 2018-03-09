@@ -22,6 +22,8 @@
         <th>Username</th>
         <th>Email</th>
         <th>Role</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <?php
     $result = mysqli_query($conn,"SELECT * FROM users");
@@ -33,6 +35,7 @@
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['role'] . "</td>";
         echo "<td><a href='edit-user.php?id=".$row['id']."'>Edit</a></td>";
+        echo "<td><a href='delete-user.php?id=".$row['id']."'>Delete</a></td>";
         echo "</tr>";
     }
     mysqli_close($conn);
