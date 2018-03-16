@@ -26,7 +26,7 @@
     <?php elseif ($_SESSION['student_id'] != 0): ?>
         <a href="student-list.php"><h3>Show Students</h3></a><br>
         <a href="professor-list.php"><h3>Show Professors</h3></a><br>
-        <a href="subject-list.php"><h3>Show subjects</h3></a><br>
+        <a href="students-subjects.php"><h3>Show subjects</h3></a><br>
     <?php else: ?>
         <a href="student-subject.php"><h3>Student grade</h3></a><br>
         <a href="student-list.php"><h3>Show Students</h3></a><br>

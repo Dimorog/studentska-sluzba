@@ -35,13 +35,11 @@
         if ($conn->query($sql) == false) {
             return $sql;
         }
-        echo "uzima se student";
         $sql = "Select * from student where index_number='$index'";
         $result = $conn->query($sql);
         if ($row = $result->fetch_assoc()) {
             $student = $row['id'];
         }
-        echo "insert usera";
         $sql = "INSERT INTO users( username, email, password, is_admin, student_id, professor_id) VALUES ('$username', '$email', '$password', 0, $student, 0)";
         if ($conn->query($sql) == true) {
             echo '<script type="text/javascript"> window.location = "student-list.php"</script>';
