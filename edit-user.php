@@ -34,7 +34,7 @@
             }else {
                 $admin = 0;
             }
-            $sql = "UPDATE users SET username='".$username."',password='".$password."',email='".$email."',is_admin=".$admin.",role='".$role."' WHERE id=".$id;
+            $sql = "UPDATE users SET username='".$username."',password='".$password."',email='".$email."',is_admin=".$admin." WHERE id=".$id;
             if ($conn->query($sql) == true) {
                 echo '<script type="text/javascript"> window.location = "user-list.php"</script>';
             }
@@ -49,18 +49,6 @@
         Password:<br>
         <input type="password" name="password"  id="password"  value="<?php echo $password ?>"><br>
 
-        Is the user student or professor:
-        <select name="role"  id="role">
-            <?php
-                if($role == 'student'){
-                    echo "<option value='student' selected>Student</option>";
-                    echo "<option value='professor'>Professor</option>";
-                }else{
-                    echo "<option value='student'>Student</option>";
-                    echo "<option value='professor' selected>Professor</option>";
-                }
-            ?>
-        </select> <br>
 
         Is this user an Admin?<br>
         <?php

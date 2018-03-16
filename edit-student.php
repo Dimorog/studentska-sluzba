@@ -6,23 +6,26 @@
     <title>Title</title>
 </head>
 <body>
-<script src="js-scripts.js"></script>
-    <?php
-    $id = $_REQUEST['id'];
-    $sql = "SELECT * from student where id=".$id;
-    $result = $conn->query($sql);
-    $firstname;$lastname;$gender;$birthday;$course;$index;
-    if($result->num_rows>0) {
-        while ($row = $result->fetch_assoc()) {
-            $firstname = $row['first_name'];
-            $lastname = $row['last_name'];
-            $index = $row['index_number'];
-            $gender = $row['gender'];
-            $birthday = $row['birthday'];
-            $course = $row['course'];
+<script src="validation-student.js"></script>
+        <?php
+        $id = $_REQUEST['id'];
+        $sql = "SELECT s.*, u.* from student s, users u where s.id = u.student_id and s.id=".$id;
+        $result = $conn->query($sql);
+        $firstname;$lastname;$gender;$birthday;$course;$index;$username;$password;$email;
+        if($result->num_rows>0) {
+            while ($row = $result->fetch_assoc()) {
+                $firstname = $row['first_name'];
+                $lastname = $row['last_name'];
+                $index = $row['index_number'];
+                $gender = $row['gender'];
+                $birthday = $row['birthday'];
+                $course = $row['course'];
+                $username = $row['username'];
+                $password = $row['password'];
+                $email = $row['email'];
+            }
         }
-    }
-    ?>
+        ?>
     <form method="post" name="edit_student" id="edit_student" onsubmit="return validateEditStudent()">
         <?php
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -34,11 +37,29 @@
             $birt_date = $_POST['birth_date'];
             $course = $_POST['course'];
             $sql = "UPDATE student SET index_number='".$index."',first_name='".$firstname."',last_name='".$lastname."',gender='".$gender."',birthday='".$birt_date."',course='".$course."' WHERE id=".$id;
+            if ($conn->query($sql) == false) {
+                echo $sql;
+            }
+            $email =$_POST['email'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $sql = "UPDATE users SET email='$email', username='$username', password='$password' where student_id=".$id;
             if ($conn->query($sql) == true) {
                 echo '<script type="text/javascript"> window.location = "student-list.php"</script>';
+            }else{
+                echo $sql;
             }
         }
         ?>
+        Email:<br>
+        <input type="text" name="email"  value="<?php echo $email ?>"><br>
+
+        Username:<br>
+        <input type="text" name="username"  value="<?php echo $username ?>"><br>
+
+        Password:<br>
+        <input type="password" name="password"  value="<?php echo $password ?>"><br>
+
         First name:<br>
         <input type="text" name="firstname"  id="firstname" value="<?php echo $firstname ?>"><br>
 
