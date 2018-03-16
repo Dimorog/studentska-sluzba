@@ -31,6 +31,9 @@ Student Grades
     </thead>
     <tbody>
         <?php
+        /*
+         *Select and display students and number of points from subjects that logged in professor is teaching.
+         */
         $pid = $_SESSION['professor_id'];
         $sql = "select s.*, ss.number_of_points from student s, student_subject ss where ss.number_of_points IS NOT NULL and ss.student_id=s.id and ss.subject_id = (select subject_id from professor where id = '$pid')";
         $result = mysqli_query($conn,$sql);
@@ -60,6 +63,9 @@ Student Grades
 
 <form method="post" name="student_subject" onsubmit="return validateSubjectGrade()">
     <?php
+    /*
+         *If number of points is valid update student_subject table with student id from form.
+         */
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $student = $_POST['student'];
         $points = $_POST['points'];
@@ -74,6 +80,9 @@ Student Grades
     Student:<br>
     <select name="student">
         <?php
+        /*
+         *Select students that are enrolled in subject but are not graded yet
+         */
         $sql = "select s.* from student s, student_subject ss where ss.student_id = s.id and ss.number_of_points IS NULL and ss.subject_id = (select subject_id from professor where id = '$pid') group by s.id";
         $result = $conn->query($sql);
         if($result->num_rows>0) {

@@ -26,6 +26,10 @@ My Subjects
     </thead>
     <tbody>
     <?php
+    /*
+     *Select subjects and number of points from subjects that logged in student is enrolled in
+     *If student is not graded yet it will display that.
+         */
     $sid = $_SESSION['student_id'];
     $sql = "SELECT s.*, ss.number_of_points, p.first_name, p.last_name FROM subject s, student_subject ss, professor p where p.subject_id = s.id and s.id = ss.subject_id and ss.student_id = '$sid' and s.id in (SELECT subject_id from student_subject where student_id = '$sid') group by s.id";
     $result = mysqli_query($conn,$sql);
@@ -71,6 +75,9 @@ Subjects
     </thead>
     <tbody>
     <?php
+    /*
+         *Select subjects that logged in student is not enrolled in
+         */
     $sid = $_SESSION['student_id'];
     $sql = "SELECT s.*, p.first_name, p.last_name  FROM subject s, professor p where s.id = p.subject_id and s.id not in (SELECT subject_id from student_subject where student_id = '$sid')";
     $result = mysqli_query($conn,$sql);

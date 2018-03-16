@@ -1,4 +1,7 @@
 function validateAddStudent() {
+    //check if entered data is empty or in invalid format.
+    //if data is not valid alert user
+    //return true or false
     var validation="";
     var firstname = document.forms["add_student"]["firstname"].value;
     if(firstname==""){
@@ -70,6 +73,9 @@ function validateAddStudent() {
 }
 
 function validateEditStudent() {
+    //check if entered data is empty or in invalid format.
+    //if data is not valid alert user
+    //return true or false
     var validation="";
     var firstname = document.forms["edit_student"]["firstname"].value;
     if(firstname==""){

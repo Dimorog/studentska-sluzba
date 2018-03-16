@@ -1,4 +1,7 @@
 function validateAddProfessor(){
+    //check if entered data is empty or in invalid format.
+    //if data is not valid alert user
+    //return true or false
     var validation="";
     var firstname = document.forms["add_professor"]["firstname"].value;
     if(firstname==""){
@@ -9,7 +12,7 @@ function validateAddProfessor(){
         validation+= "last name can't be empty\n";
     }
     var age = document.forms["add_professor"]["age"].value;
-    var agePattern = new RegExp("^(2[89]|[3-5][0-9]|6[0-5])$");
+    var agePattern = new RegExp("^(2[89]|[3-5][0-9]|6[0-5])$");//Age must be between 28 and 65
     if(age!==""){
         if(agePattern.test(age)==false){
             validation+="age must be between is 28 and 65\n"
@@ -58,6 +61,9 @@ function validateAddProfessor(){
 }
 
 function validateEditProfessor(){
+    //check if entered data is empty or in invalid format.
+    //if data is not valid alert user
+    //return true or false
     var validation="";
     var firstname = document.forms["edit_professor"]["firstname"].value;
     if(firstname==""){
