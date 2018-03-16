@@ -10,6 +10,13 @@
 
 <form method="post" name="add_professor" onsubmit="return validateAddProfessor()">
     <?php
+
+    /*
+         * Gets the form data and checks to see if the given full name matches an existing one in the database
+         * and if it doesn't it proceeds with adding the professor to the database, otherwise it
+         * will give a warning that professor already exists
+         */
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
@@ -21,6 +28,12 @@
             echo "<p style='color:red; text-align:center; font-weight:bold;'>Professor already exists</p>";
             return;
         }
+
+        /*
+         *Gets the form data and checks to see if the given email address matches an existing one in the database
+         * and if it doesn't it proceeds with adding the user to the database, otherwise it
+         * will give a warning that email address is already in use
+         */
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -30,6 +43,11 @@
             echo "<p style='color:red; text-align:center; font-weight:bold;'>User already exists</p>";
             return;
         }
+
+        /*
+         * Inserts form data into relevant tables, in this case adds the professors data to professor table
+         * and his register credentials to the user table.Finally it will redirect back to the professors list.
+         */
         $sql = "INSERT INTO professor( first_name, last_name, age, subject_id) VALUES ('$firstname', '$lastname', $age, $subject)";
         if ($conn->query($sql) == false) {
             return $sql;
@@ -75,6 +93,13 @@
         <label>Subject</label><br>
         <select name="subject">
             <?php
+
+            /*
+             * Gives select options about the assignment of a certain subject to
+             * the professor based on the data that says if the subject is already
+             * taken by another professor
+             */
+
             $sql = "select * from subject where id not in (select subject_id from professor)";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
