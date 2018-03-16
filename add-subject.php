@@ -20,7 +20,7 @@
         $name = $_POST['name'];
         $semester = $_POST['semester'];
         $description = $_POST['description'];
-        $ecdl = $_POST['ecdl_credits'];
+        $ecdl = $_POST['ecdl'];
         $sql = "INSERT INTO subject(name, semester, ecdl_credits, description) VALUES ('$name','$semester', $ecdl, '$description')";
         if ($conn->query($sql) == true) {
             echo '<script type="text/javascript"> window.location = "subject-list.php"</script>';
