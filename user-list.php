@@ -26,6 +26,11 @@
         <th>Delete</th>
     </tr>
     <?php
+
+    /*
+     * Takes all the user data from user table and presents it dynamically based on the user roles
+     */
+
     $result = mysqli_query($conn, "SELECT * FROM users");
 
     while ($row = mysqli_fetch_array($result)) {

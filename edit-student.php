@@ -8,6 +8,13 @@
 <body>
 <script src="validation-student.js"></script>
         <?php
+
+        /*
+         * Gets the selected students existing user/student table data
+         * and presents them in the edit forms input fields for further
+         * editing
+         */
+
         $id = $_REQUEST['id'];
         $sql = "SELECT s.*, u.* from student s, users u where s.id = u.student_id and s.id=".$id;
         $result = $conn->query($sql);
@@ -28,6 +35,12 @@
         ?>
     <form method="post" name="edit_student" id="edit_student" onsubmit="return validateEditStudent()">
         <?php
+
+        /*
+         * Takes the changed input field data and updates the database data
+         * for student/user records accordingly
+         */
+
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "aaa";
             $firstname = $_POST['firstname'];

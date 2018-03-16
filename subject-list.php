@@ -21,6 +21,10 @@
         <th>ECDL credits</th>
         <th>Description</th>
         <?php
+        /*
+         * Based on the user role it shows additional table data
+         *  such as options to edit or delete the records
+         */
         if (isset($_SESSION["username"])) {
             if ($_SESSION["is_admin"] == 1) {
                 echo "<th>Edit</th>";
@@ -32,6 +36,12 @@
     </thead>
     <tbody>
     <?php
+
+    /*
+     * Takes all the data from subjects table
+     * and presents them as a table which is dynamic based on the logged in users role
+     */
+
     $result = mysqli_query($conn, "SELECT * FROM subject");
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
