@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require 'db_connection.php';?>
+    <?php require 'db_connection.php'; ?>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <script src="js-scripts.js"></script>
-    <form action="" name="add_user" onsubmit="return validateAddUser()" method="POST">
-        <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $username = $_POST['username'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $role = $_POST['role'];
-            if(isset($_POST['admin'])) {
-                $admin = 1;
-            }else {
-                $admin = 0;
-            }
-            $sql = "Select * from users where email = '$email' " ;
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                echo "<p style='color:red; text-align:center; font-weight:bold;'>User already exists</p>";
-                return;
-            }
-            $sql = "INSERT INTO users( username, email, password, is_admin, role) VALUES ('$username', '$email', '$password', '$admin', '$role')";
-            if ($conn->query($sql) == true) {
-                echo '<script type="text/javascript"> window.location = "user-list.php"</script>';
-            }
+<form method="post" name="add_user" onsubmit="return validateAddUser()">
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $admin = 0;
+        if (isset($_POST['admin'])) {
+            $admin = 1;
         }
-        ?>
-
-        Username:<br>
-        <input type="text" name="username"><br>
-
-        Email:<br>
-        <input type="text" name="email" id="email" ><br>
-
-        Password:<br>
-        <input type="password" name="password"  id="password"  ><br>
-
-        Is the user student or professor:
-        <select name="role"  id="role">
-            <option value="student">Student</option>
-            <option value="professor">Professor</option>
-        </select> <br>
-
-        Is this user an Admin?<br>
-        <input type="checkbox" name="admin" > Yes<br>
-
-        <input type="submit" value="Submit">
-    </form>
-
+        $sql = "Select * from users where email = '$email' ";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo "<p style='color:red; text-align:center; font-weight:bold;'>User already exists</p>";
+            return;
+        }
+        $sql = "INSERT INTO users( username, email, password, is_admin, student_id, professor_id) VALUES ('$username', '$email', '$password', '$admin', 0 , 0)";
+        if ($conn->query($sql) == true) {
+            echo '<script type="text/javascript"> window.location = "index.php"</script>';
+        }
+    }
+    ?>
+    <div>
+        <label for="exampleInputEmail1">Email address</label><br>
+        <input id="exampleInputEmail1" type="text" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputUsername1">Username</label><br>
+        <input id="exampleInputUsername1" type="text" name="username" aria-describedby="emailHelp"
+               placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label><br>
+        <input id="exampleInputPassword1" name="password" type="password" placeholder="Password">
+    </div>
+    <div>
+        <div>
+            <input type="checkbox" name="admin"> Admin<br>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 
 </body>
