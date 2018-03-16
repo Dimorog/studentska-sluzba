@@ -9,6 +9,13 @@
 <script src="js-scripts.js"></script>
 <form method="post" name="add_user" onsubmit="return validateAddUser()">
     <?php
+
+    /*
+         *Gets the form data and checks to see if the given email address matches an existing one in the database
+         * and if it doesn't it proceeds with adding the user to the database, otherwise it
+         * will give a warning that email address is already in use.Finally it redirects back to the index page
+         */
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $email = $_POST['email'];

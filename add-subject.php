@@ -9,6 +9,13 @@
 <script src="js-scripts.js"></script>
 <form method="post" name="add_subject" onsubmit="return validateAddSubject()">
     <?php
+
+    /*
+     * Gets the form data from the add subject form
+     * and inserts it into the subject table as new subject.
+     * Finally it redirects back to subjects list
+     */
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name = $_POST['name'];
         $semester = $_POST['semester'];
