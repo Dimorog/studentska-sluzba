@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        /*
+         *Function validate subject grade
+         *@params - none
+         * @return boolean
+         */
         function validateSubjectGrade() {
             var points = document.forms["student_subject"]["points"].value;
             if(points>=1 && points<=100){
@@ -32,7 +37,7 @@ Student Grades
     <tbody>
         <?php
         /*
-         *Select and display students and number of points from subjects that logged in professor is teaching.
+         *Select and display students and number of points from subjects that the logged in professor is teaching.
          */
         $pid = $_SESSION['professor_id'];
         $sql = "select s.*, ss.number_of_points from student s, student_subject ss where ss.number_of_points IS NOT NULL and ss.student_id=s.id and ss.subject_id = (select subject_id from professor where id = '$pid')";
@@ -69,7 +74,15 @@ Student Grades
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $student = $_POST['student'];
         $points = $_POST['points'];
-        $sql = "UPDATE student_subject set number_of_points = '$points' where student_id='$student' and subject_id = (select subject_id from professor where id = '$pid')";
+        switch (true){
+            case ($points >= 51 && $points<60):$grade="E";break;
+            case ($points >= 60 && $points<70):$grade="D";break;
+            case ($points >= 70 && $points<80):$grade="C";break;
+            case ($points >= 80 && $points<90):$grade="B";break;
+            case ($points >= 90 && $points<=100):$grade="A";break;
+            default:$grade="F";break;
+        }
+        $sql = "UPDATE student_subject set number_of_points = '$points', grade = '$grade' where student_id='$student' and subject_id = (select subject_id from professor where id = '$pid')";
         if ($conn->query($sql) == true) {
             echo '<script type="text/javascript"> window.location = "student-subject.php"</script>';
         }else{

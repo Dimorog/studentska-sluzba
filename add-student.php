@@ -6,6 +6,10 @@
     <title>Title</title>
 </head>
 <body>
+
+<a href="/index.php">HOMEPAGE</a>
+<br><br>
+
 <script src="js-scripts.js"></script>
 <form method="post" name="add_student" onsubmit="return validateAddStudent()">
     <?php

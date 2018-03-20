@@ -6,6 +6,10 @@
     <title>Title</title>
 </head>
 <body>
+
+<a href="/index.php">HOMEPAGE</a>
+<br><br>
+
 <script src="js-scripts.js"></script>
     <?php
 
@@ -25,7 +29,6 @@
             $email = $row['email'];
             $password = $row['password'];
             $admin = $row['is_admin'];
-            $role = $row['role'];
         }
     }
     ?>
@@ -41,7 +44,6 @@
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $role = $_POST['role'];
             if(isset($_POST['admin'])) {
                 $admin = 1;
             }else {

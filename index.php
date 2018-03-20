@@ -17,7 +17,6 @@
     if ($_SESSION['is_admin'] != 0): ?>
 
         <a href="add-student.php"><h3>Add Student</h3></a>
-        <a href="student-subject.php"><h3>Student grade</h3></a>
         <a href="student-list.php"><h3>Show Students</h3></a><br>
 
         <a href="add-professor.php"><h3>Add Professor</h3></a>

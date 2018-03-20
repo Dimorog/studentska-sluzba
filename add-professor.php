@@ -7,6 +7,8 @@
     <script src="js-scripts.js"></script>
 </head>
 <body>
+<a href="/index.php">HOMEPAGE</a>
+<br><br>
 
 <form method="post" name="add_professor" onsubmit="return validateAddProfessor()">
     <?php
@@ -108,9 +110,10 @@
                 }
             }
             ?>
-        </select>
+        </select><br>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+
 </form>
 </body>
 </html>

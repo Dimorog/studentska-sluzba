@@ -6,6 +6,10 @@
     <title>Title</title>
 </head>
 <body>
+
+<a href="/index.php">HOMEPAGE</a>
+<br><br>
+
 <script src="validation-student.js"></script>
         <?php
 
