@@ -46,7 +46,8 @@ if (isset($_SESSION["user_id"])) {
     echo $_SESSION['username'];
     echo '<br><a href="logout.php">LOGOUT</a>';
 } else {
-    echo '<a href="login.php">LOGIN</a>';
+    echo '<a href="login.php">LOGIN</a> <br><br> ';
+    echo '<a href="add-user.php">Add user <br>(For demo purposes) </a>';
 }
 ?>
 
