@@ -13,12 +13,11 @@
 <script src="js-scripts.js"></script>
         <?php
 
-        /*
-     * Gets the form data from the edit subject form
-     * and inserts the changes made in the input fields containg existing subject data.
-     * Finally it redirects back to subjects list
-     */
-
+        /**
+         * Gets the form data from the edit subject form
+         * and inserts the changes made in the input fields containing existing subject data.
+         * Finally it redirects back to subjects list
+         */
         $id = $_REQUEST['id'];
         $sql = "SELECT * from subject where id=".$id;
         $result = $conn->query($sql);

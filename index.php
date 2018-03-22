@@ -10,10 +10,7 @@
 <h1>Student service</h1>
 <?php if (isset($_SESSION['username']))
 
-    /*
-     * Shows different layout based on users role
-     */
-
+    /** Shows different layout based on users role*/
     if ($_SESSION['is_admin'] != 0): ?>
 
         <a href="add-student.php"><h3>Add Student</h3></a>
@@ -39,9 +36,7 @@
 
 <?php
 
-/*
-* Shows different layout based on users session details
-*/
+/** Shows different layout based on users session details*/
 if (isset($_SESSION["user_id"])) {
     echo $_SESSION['username'];
     echo '<br><a href="logout.php">LOGOUT</a>';

@@ -14,12 +14,11 @@
 <form method="post" name="add_student" onsubmit="return validateAddStudent()">
     <?php
 
-    /*
-         *Gets the form data and checks to see if the given index-number matches an existing one in the database
-         * and if it doesn't it proceeds with adding the user to the database, otherwise it
-         * will give a warning that index number is already assigned to another student
-         */
-
+    /**
+     *Gets the form data and checks to see if the given index-number matches an existing one in the database
+     * and if it doesn't it proceeds with adding the user to the database, otherwise it
+     * will give a warning that index number is already assigned to another student
+     */
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
@@ -34,12 +33,11 @@
             return;
         }
 
-        /*
-         *Gets the form data and checks to see if the given email address matches an existing one in the database
+        /**
+         * Gets the form data and checks to see if the given email address matches an existing one in the database
          * and if it doesn't it proceeds with adding the user to the database, otherwise it
          * will give a warning that email address is already in use
          */
-
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -50,11 +48,10 @@
             return;
         }
 
-        /*
+        /**
          * Inserts form data into relevant tables, in this case adds the students data to student table
          * and his register credentials to the user table.Finally it will redirect back to the students list.
          */
-
         $sql = "INSERT INTO student(index_number, first_name, last_name, gender, birthday, course) VALUES ('$index', '$firstname', '$lastname', '$gender', '$birt_date', '$course')";
         if ($conn->query($sql) == false) {
             return $sql;

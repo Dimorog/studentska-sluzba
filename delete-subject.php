@@ -1,9 +1,6 @@
 <?php
 
-/*
- * Deletes the selected subject and relevatn student_subject data
- */
-
+/** Deletes the selected subject and relevant student_subject data*/
 require 'db_connection.php';
 $id = $_REQUEST['id'];
 mysqli_query($conn,"DELETE FROM subject WHERE id = '$id'");

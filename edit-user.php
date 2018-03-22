@@ -13,12 +13,11 @@
 <script src="js-scripts.js"></script>
     <?php
 
-        /*
-         *Gets the selected user form data containing his existing data and
-         * updates them according to the changes made inside the input fields.
-         * Finally it redirects back to the user list
-         */
-
+    /**
+     * Gets the selected user form data containing his existing data and
+     * updates them according to the changes made inside the input fields.
+     * Finally it redirects back to the user list
+     */
     $id = $_REQUEST['id'];
     $sql = "SELECT * from users where id=".$id;
     $result = $conn->query($sql);
@@ -35,11 +34,10 @@
     <form method="post" name="edit_user" onsubmit="return validateEditUser()">
         <?php
 
-        /*
+        /**
          * Updates the user data inside the database based on the changes
          * made inside the input fields
          */
-
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $username = $_POST['username'];
             $email = $_POST['email'];
