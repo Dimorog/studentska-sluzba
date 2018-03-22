@@ -4,7 +4,7 @@
     <?php require 'db_connection.php'; ?>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="js-scripts.js"></script>
+    <script src="validation-professor.js"></script>
 </head>
 <body>
 
