@@ -25,7 +25,7 @@
         <a href="add-subject.php"><h3>Add subject</h3></a>
         <a href="subject-list.php"><h3>Show subjects</h3></a><br>
 
-        <a href="add-user.php"><h3>Add user</h3></a>
+        <a href="add-user.php"><h3>Add admin</h3></a>
         <a href="user-list.php"><h3>Show users</h3></a><br>
     <?php elseif ($_SESSION['student_id'] != 0): ?>
         <a href="student-list.php"><h3>Show Students</h3></a><br>
@@ -47,7 +47,7 @@ if (isset($_SESSION["user_id"])) {
     echo '<br><a href="logout.php">LOGOUT</a>';
 } else {
     echo '<a href="login.php">LOGIN</a> <br><br> ';
-    echo '<a href="add-user.php">Add user <br>(For demo purposes) </a>';
+    echo '<a href="add-user.php">Add Admin <br>(For demo purposes) </a>';
 }
 ?>
 
