@@ -68,15 +68,9 @@ Student Grades
 
 <form method="post" name="student_subject" onsubmit="return validateSubjectGrade()">
     <?php
-<<<<<<< HEAD
-        /**
-         *If number of points is valid update student_subject table with student id from form.
-         */
-=======
-    /*
+    /**
      *If number of points is valid update student_subject table with student id from form.
      */
->>>>>>> 821e8878ab4aa9c08923bf2a02427f8768776e5c
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $student = $_POST['student'];
         $points = $_POST['points'];

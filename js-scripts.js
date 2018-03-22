@@ -1,7 +1,9 @@
 function validateLogin(){
-    //check if entered data(email and password) is empty or in invalid format.
-    //if data is not valid alert user
-    //return true or false
+    /**
+     * Function validates login form
+     * @param - none
+     * @return boolean
+     */
     var validation = "";
     var email = document.forms["login"]["email"].value;
     var emailRegx = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
@@ -32,9 +34,11 @@ function validateLogin(){
 }
 
 function validateAddUser() {
-    //check if entered data(username, email, password) is empty or in invalid format.
-    //if data is not valid alert user
-    //return true or false
+    /**
+     * Function validates add_user form
+     * @param - none
+     * @return boolean
+     */
     var validation = "";
     var username = document.forms["add_user"]["username"].value;
     var usernameRegx = new RegExp("^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$");
@@ -76,9 +80,11 @@ function validateAddUser() {
 }
 
 function validateEditUser() {
-    //check if entered data(username, email, password) is empty or in invalid format.
-    //if data is not valid alert user
-    //return true or false
+    /**
+     * Function validates edit_user form
+     * @param - none
+     * @return boolean
+     */
     var validation= "";
     var username = document.forms["edit_user"]["username"].value;
     var usernameRegx = new RegExp("^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$");
@@ -117,9 +123,11 @@ function validateEditUser() {
 }
 
 function validateAddSubject() {
-    //check if entered data(name, ecdl, descirption) is empty or in invalid format.
-    //if data is not valid alert user
-    //return true or false
+    /**
+     * Function validates add_subject form
+     * @param - none
+     * @return boolean
+     */
     var validation = "";
     var name = document.forms["add_subject"]["name"].value;
     if(name==""){
@@ -148,9 +156,11 @@ function validateAddSubject() {
 }
 
 function validateEditSubject() {
-    //check if entered data(name, ecdl, descirption) is empty or in invalid format.
-    //if data is not valid alert user
-    //return true or false
+    /**
+     * Function validates edit_subject form
+     * @param - none
+     * @return boolean
+     */
     var validation = "";
     var name = document.forms["edit_subject"]["name"].value;
     if(name==""){
