@@ -10,7 +10,7 @@
 <a href="/index.php">HOMEPAGE</a>
 <br><br>
 
-<script src="js-scripts.js"></script>
+<script src="validation-student.js"></script>
 <form method="post" name="add_student" onsubmit="return validateAddStudent()">
     <?php
 
